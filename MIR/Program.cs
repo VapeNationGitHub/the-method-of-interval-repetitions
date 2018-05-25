@@ -20,7 +20,8 @@ namespace MIR
             string s2 = "formula";
             string s3 = "hello";
             string s4 = "bye";
-            string[] i = {"1", "x"};
+            string s5 = "1";
+            string s6 = "2";
 
             Console.WriteLine("Введите, что вы хотите повторить: " + s1 + " или " + s2);
 
@@ -91,47 +92,47 @@ namespace MIR
             }
 
 
-            // повторение формул
+            // повторение формул          
+
             else if (answer == s2)
             {
                 Console.WriteLine("Введите одну из следующих формул, которую вы хотите повторить: 1) [x = 2x + 3] или 2) [y = 4x^2]");
-                string formulaline = "1";//Console.ReadLine();
-                int Value = int.Parse(formulaline);
-                if (formulaline == s3)
+                string formulaline = Console.ReadLine();
+                if (formulaline == s5)
                 {
-                    Console.WriteLine("Вы выбрали повторить формулу " + formulaline);
-                    Console.WriteLine("Введите время, через которое вы хотите повторить формулу " + s3 + " : " + a + " секунд, " + b + " секунд, или " + c + " секунд");
+                    Console.WriteLine("Вы выбрали повторить формулу " + s5);
+                    Console.WriteLine("Введите время, через которое вы хотите повторить формулу " + s5 + " : " + a + " секунд, " + b + " секунд, или " + c + " секунд");
 
-                    LabelHello:
+                    LabelFormula1:
                     string formulatime = Console.ReadLine();
                     switch (formulatime)
                     {
                         case "10":
                             Console.WriteLine("Напоминание сработает через " + a + " секунд");
                             Thread.Sleep(10000);
-                            Console.WriteLine(s3);
+                            Console.WriteLine(s5);
                             break;
                         case "20":
                             Console.WriteLine("Напоминание сработает через " + b + " секунд");
                             Thread.Sleep(20000);
-                            Console.WriteLine(s3);
+                            Console.WriteLine(s5);
                             break;
                         case "60":
                             Console.WriteLine("Напоминание сработает через " + c + " секунд");
                             Thread.Sleep(60000);
-                            Console.WriteLine(s3);
+                            Console.WriteLine(s5);
                             break;
                         default:
                             Console.WriteLine("Вы ввели неверное значение! Пожалуйста, введите корректное время!");
-                            goto LabelHello;
+                            goto LabelFormula1;
                     }
                 }
-                else if (formulaline == s4)
+                else if (formulaline == s6)
                 {
-                    Console.WriteLine("Вы выбрали повторить формулу " + s4);
-                    Console.WriteLine("Введите время, через которое вы хотите повторить формулу " + s4 + " : " + a + " секунд, " + b + " секунд, или " + c + " секунд");
+                    Console.WriteLine("Вы выбрали повторить формулу " + s6);
+                    Console.WriteLine("Введите время, через которое вы хотите повторить формулу " + s6 + " : " + a + " секунд, " + b + " секунд, или " + c + " секунд");
 
-                    LabelBye:
+                    LabelFormula2:
                     string formulatime = Console.ReadLine();
                     switch (formulatime)
                     {
@@ -152,7 +153,7 @@ namespace MIR
                             break;
                         default:
                             Console.WriteLine("Вы ввели неверное значение! Пожалуйста, введите корректное время!");
-                            goto LabelBye;
+                            goto LabelFormula2;
                     }
                 }
             }                
